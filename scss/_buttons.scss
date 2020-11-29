@@ -1,0 +1,45 @@
+%btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 8px 20px;
+  margin: 3px;
+  background-color: $light-bg-color;
+  border: solid 1.5px $border-white;
+  color: $font-white;
+  transition: all 0.1s ease;
+  &:hover {
+    transform: scale(0.98);
+    color: $highlight-color;
+    border: solid 1.5px $highlight-color;
+    background-color: $darker-bg-color;
+  }
+}
+
+.circle {
+  background-color: $lighter-bg-color;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.active {
+  background-color: $highlight-color;
+  transform: scale(1.1);
+}
+
+.line {
+  width: 170px;
+  height: 2px;
+  position: absolute;
+  background-color: $lighter-bg-color;
+}
+
+.inFront {
+  z-index: 3;
+}
+
+.behind {
+  z-index: 1;
+}

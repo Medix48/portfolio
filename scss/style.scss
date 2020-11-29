@@ -1,0 +1,289 @@
+@import 'config';
+@import 'buttons';
+@import 'utilities';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $dark-color;
+  font-family: $font-stack;
+  color: $font-white;
+  line-height: 1.6;
+}
+
+.theme-bar-fixed {
+  @include flex-center(row);
+  position: fixed;
+  margin: 20px 0 0 100px;
+  .circle {
+    margin: 0 5px;
+    display: none; /* WIP, disabled */
+  }
+
+  .theme-1 {
+    background-color: rgb(84, 209, 46);
+  }
+  .theme-2 {
+    background-color: rgb(209, 144, 46);
+  }
+  .theme-3 {
+    background-color: rgb(209, 46, 60);
+  }
+
+  .active {
+    transform: scale(1.2);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.text-highlight {
+  color: $highlight-color;
+}
+
+a {
+  color: $font-white;
+  text-decoration: none;
+  transition: color 0.2s;
+  user-select: none;
+  &:hover {
+    color: $highlight-color;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 10px 0;
+  position: sticky;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    margin-right: 25px;
+  }
+
+  #navName {
+    color: $highlight-color;
+    font-size: 30px;
+    font-family: $font-stack;
+    font-weight: 1000;
+    padding-left: 25px;
+  }
+
+  a {
+    font-size: 20px;
+  }
+}
+
+.showcase {
+  padding: 40px 40px 40px 40px;
+  display: flex;
+}
+
+.section {
+  padding: 20px 0 40px 0;
+  @include flex-center(column);
+
+  p {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0 30px;
+  }
+
+  .icons {
+    margin: 15px 0 30px 0;
+    @include flex-center(row);
+    img {
+      border-radius: 50%;
+      border: solid 5px $highlight-color;
+      width: 150px;
+      margin: 0 30px;
+    }
+  }
+
+  .imgRow {
+    @include flex-center(row);
+
+    img {
+      width: 40%;
+      margin: 30px;
+      border: solid 4px $light-bg-color;
+      transition: transform 0.5s ease, border 0.5s;
+      border-radius: 5px;
+
+      &:hover {
+        transform: scale(1.05);
+        border: solid 4px $highlight-color;
+      }
+    }
+  }
+}
+
+.showcase-text {
+  @include flex-center(column);
+  font-size: 51px;
+  width: 50%;
+
+  .introText {
+    text-align: center;
+    display: inline-block;
+    span {
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    span.fade {
+      opacity: 1;
+    }
+  }
+}
+.showcase-img {
+  @include flex-center();
+  width: 50%;
+  padding: 10px 0;
+
+  img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 50%;
+    border: medium solid $border-light;
+    transition: transform 1s, border 1s;
+  }
+}
+
+.sectionLine {
+  border-top: 0.5px $border-light;
+}
+
+#marco {
+  transition: color 1s;
+}
+
+.curriculum {
+  .item {
+    @include flex-center(column);
+    margin: 30px 0;
+    img {
+      width: 200px;
+      border-radius: 50%;
+      border: solid 5px $highlight-color;
+    }
+
+    p {
+      font-size: 25px;
+    }
+  }
+}
+
+.contactForm {
+  form {
+    @include flex-center(column);
+
+    label {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 20px 0;
+      width: 85%;
+
+      input {
+        outline: none;
+        height: 50px;
+        font-size: 25px;
+        padding: 0 15px;
+        font-family: $font-stack;
+        background-color: $light-bg-color;
+        color: #fff;
+        border: solid 2px $border-white;
+        border-radius: 5px;
+        transition: border 0.3s ease, background-color 0.3s ease;
+
+        &:focus {
+          border: solid 2px $highlight-color;
+          background-color: $lighter-bg-color;
+        }
+      }
+    }
+
+    .form-group-check {
+      flex-direction: row;
+      margin: 20px 0 40px 0;
+
+      label {
+        padding-left: 20px;
+        font-size: 18px;
+      }
+
+      .checkbox {
+        margin-left: 10px;
+      }
+    }
+
+    textarea {
+      outline: none;
+      font-size: 20px;
+      padding: 15px 15px;
+      font-family: $font-stack;
+      resize: vertical;
+      background-color: $light-bg-color;
+      color: #fff;
+      border: solid 1.5px $border-white;
+      border-radius: 5px;
+      transition: border 0.3s ease, background-color 0.3s ease;
+
+      &:focus {
+        border: solid 2px $highlight-color;
+        background-color: $lighter-bg-color;
+      }
+    }
+
+    .submitBtn {
+      @extend %btn;
+      height: 40px;
+      width: 170px;
+      font-size: 17px;
+    }
+  }
+}
+
+.footer {
+  padding: 50px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+
+  a {
+    margin-right: 25px;
+  }
+}
+
+.switches {
+  @include flex-center(row);
+}

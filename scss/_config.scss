@@ -1,0 +1,36 @@
+$dark-color: #1b1b1b;
+$font-stack: 'Raleway', Arial, Helvetica, sans-serif;
+$logoFont: 'Fjalla One', Raleway, sans-serif;
+$font-white: #fff;
+$border-light: rgb(184, 184, 184);
+$border-white: #fff;
+$highlight-color: rgb(209, 144, 46);
+$lighter-bg-color: rgb(117, 117, 117);
+$light-bg-color: rgb(70, 70, 70);
+$darker-bg-color: rgb(48, 48, 48);
+
+p,
+a {
+  font-weight: 200;
+}
+
+h1 {
+  text-align: center;
+  color: $highlight-color;
+  margin: 20px 0 20px 0;
+  font-size: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: $highlight-color;
+  margin: 10px 0 0px 0;
+  font-size: 30px;
+}
+
+h3 {
+  text-align: center;
+  color: $font-white;
+  margin: 0px 0 15px 0;
+  font-size: 25px;
+}
